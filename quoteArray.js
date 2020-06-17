@@ -1,12 +1,4 @@
-//import {quotesArray} from './quoteArray';
-
-let start = document.querySelector('.start-button');
-let next =  document.querySelector('.next-button');
-let home = document.querySelector('.home-button');
-let showQuote = document.querySelector('.show-quote');
-let quoteAuthor = document.querySelector('.author');
-let display = document.querySelector('.display');
-let container = document.querySelector('.container');
+//export default quotesArray
 
 let quotesArray = [
   {
@@ -107,27 +99,3 @@ let quotesArray = [
     author: `Margaret Fuller`
   }
 ];
-
-const getRandomQuote = () => {
-  let random = Math.floor(Math.random() * quotesArray.length);
-  return quotesArray[random];
-};
-
-const displayQuote = () => {
-  let newQuote = getRandomQuote();
-  showQuote.textContent = newQuote.quote;
-  quoteAuthor.textContent = newQuote.author;
-}
-displayQuote();
-
-next.addEventListener('click', displayQuote);
-
-home.addEventListener('click', () => {
-  container.hidden = false;
-  display.hidden = true;
-});
-
-start.addEventListener('click', () => {
-  container.hidden = true;
-  display.hidden = false;
-});
